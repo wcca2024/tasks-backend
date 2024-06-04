@@ -1,4 +1,4 @@
-package br.ce.wcaquino.taskbackend.controller;
+package br.ce.wcaquino.tasks_backend.controller;
 
 import java.util.List;
 
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.ce.wcaquino.taskbackend.model.Task;
-import br.ce.wcaquino.taskbackend.repo.TaskRepo;
-import br.ce.wcaquino.taskbackend.utils.DateUtils;
-import br.ce.wcaquino.taskbackend.utils.ValidationException;
+import br.ce.wcaquino.tasks_backend.model.Task;
+import br.ce.wcaquino.tasks_backend.repo.TaskRepo;
+import br.ce.wcaquino.tasks_backend.utils.DateUtils;
+import br.ce.wcaquino.tasks_backend.utils.ValidationException;
 
 @RestController
 @RequestMapping(value ="/todo")
