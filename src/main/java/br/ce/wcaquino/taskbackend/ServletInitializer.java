@@ -1,4 +1,4 @@
-package br.ce.wcaquino.tasks_backend;
+package br.ce.wcaquino.taskbackend;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

@@ -1,4 +1,4 @@
-package br.ce.wcaquino.tasks_backend.utils;
+package br.ce.wcaquino.taskbackend.utils;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
