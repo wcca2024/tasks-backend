@@ -29,6 +29,8 @@ public class TaskControllerTest {
 
 	@Test
 	public void naoDeveSalvarTarefaSemDescricao() {
+		System.out.println("asdasdas");
+		Assert.fail();
 		Task todo = new Task();
 		todo.setDueDate(LocalDate.now());
 		try {
