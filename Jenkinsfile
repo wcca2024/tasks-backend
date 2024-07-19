@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Unit Tests') {
             steps {
-                bat 'mvn test'
+                bat 'mvn test jacoco:report'
             }
         }
         stage('Sonar Analysis') {
