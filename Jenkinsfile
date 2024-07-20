@@ -43,7 +43,7 @@ pipeline {
                 }
             }
         }
-        stage('Deploy Backend') {
+        stage('Deploy Frontend') {
             steps {
                 dir('frontend') {
                     git credentialsId: 'gmail_wcaquino', url: 'https://github.com/wcca2024/tasks-frontend'
