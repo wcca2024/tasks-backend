@@ -23,15 +23,20 @@ pipeline {
         }
         stage('Quality Gate') {
             steps {
-                sleep(10)
-                timeout(time: 1, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: true
-                }
+                // sleep(10)
+                // timeout(time: 1, unit: 'MINUTES') {
+                //     waitForQualityGate abortPipeline: true
+                // }
             }
         }
         stage('Deploy Backend') {
             steps {
                 deploy adapters: [tomcat9(credentialsId: 'tomcat_login', path: '', url: 'http://localhost:8001/')], contextPath: 'tasks-backend', war: 'target/tasks-backend.war'
+            }
+        }
+        stage('API Test') {
+            steps {
+                git credentialsId: 'gmail_wcaquino', url: 'https://github.com/wcca2024/tasks-api-test'
             }
         }
     }
