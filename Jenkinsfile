@@ -43,5 +43,14 @@ pipeline {
                 }
             }
         }
+        stage('Deploy Backend') {
+            steps {
+                dir('frontend') {
+                    git credentialsId: 'gmail_wcaquino', url: 'https://github.com/wcca2024/tasks-frontend'
+                    bat 'mvn clean package'
+                    deploy adapters: [tomcat9(credentialsId: 'tomcat_login', path: '', url: 'http://localhost:8001/')], contextPath: 'tasks', war: 'target/tasks.war'
+                }
+            }
+        }
     }
 }
