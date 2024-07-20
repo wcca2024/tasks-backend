@@ -52,5 +52,13 @@ pipeline {
                 }
             }
         }
+        stage('Functional Test') {
+            steps {
+                dir('functional-test') {
+                    git credentialsId: 'gmail_wcaquino', url: 'https://github.com/wcca2024/tasks-functional-tests'
+                    bat 'mvn test'
+                }
+            }
+        }
     }
 }
