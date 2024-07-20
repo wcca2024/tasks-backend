@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Quality Gate') {
             steps {
-                bash 'echo skipping...' 
+                bat 'echo skipping...' 
                 // sleep(10)
                 // timeout(time: 1, unit: 'MINUTES') {
                 //     waitForQualityGate abortPipeline: true
@@ -37,7 +37,10 @@ pipeline {
         }
         stage('API Test') {
             steps {
-                git credentialsId: 'gmail_wcaquino', url: 'https://github.com/wcca2024/tasks-api-test'
+                dir('api-test') {
+                    git credentialsId: 'gmail_wcaquino', url: 'https://github.com/wcca2024/tasks-api-test'
+                    bat 'mvn test'
+                }
             }
         }
     }
