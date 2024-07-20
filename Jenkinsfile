@@ -66,7 +66,7 @@ pipeline {
                 bat 'docker-compose up -d'
             }
         }
-        stage('Functional Test') {
+        stage('Healtha Check') {
             steps {
                 sleep(10)
                 dir('functional-test') {
